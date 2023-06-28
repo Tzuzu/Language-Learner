@@ -9,7 +9,7 @@
     <ul>
         <li>Linguify</li>
         <li>Feedback &#38; Reviews</li>
-        {{#if logged_in}}
+        {{#if isLoggedIn}}
         <li>Welcome {{user.username}}</li>
         <li>Logout</li>
         {{else}}
@@ -24,7 +24,7 @@
         <li>Spanish</li>
     </ul>
     
-    {{#if logged_in}}
+    {{#if isLoggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
