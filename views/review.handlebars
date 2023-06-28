@@ -1,29 +1,3 @@
-<div>
-    <h2>Reviews</h2>
-</div>
-
-{{#if isLoggedIn}}
-<div>
-    <div>
-        <h3>Leave a Review!</h3>
-
-        <form class="form new-review-form">
-            <div class="form-group">
-                <label for="review-info">Write your review here:</label>
-                <input class="review-input" type="input" name="review" />
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-    </div>
-</div>
-{{/if}}
-
-{{#if reviews.length}}
-<div class="col-md-6 review-list">
-    <h3>Current Reviews</h3>
 
     {{#each reviews as |review|}}
     <div class="row mb-2">
