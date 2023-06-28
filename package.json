@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Tzuzu/Language-Learner#readme",
   "dependencies": {
-    "country-flag-icons": "^1.5.7"
+    "country-flag-icons": "^1.5.7",
+    "dotenv": "^16.3.1",
+    "sequelize": "^6.32.1"
   }
 }
