@@ -1,10 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const {User} = require('../../models');
+const {User, Question} = require('../../models');
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-
+    const questionData = await Question.findAll();
+    const question = questionData.map((question) => question.get({ plain: true}));
+    res.render("all", {
+        question: questionData
+    })
     }
     catch (error) {
         console.log(error);
