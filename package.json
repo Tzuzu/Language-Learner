@@ -23,4 +23,17 @@
         "nodemon": "^2.0.22",
         "prettier": "^2.8.8"
     }
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "country-flag-icons": "^1.5.7"
+  }
 }
