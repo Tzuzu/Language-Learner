@@ -1,18 +1,21 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-const question = sequelize.define('question', {
-  question_id: {
+const answer = sequelize.define('answer', {
+  answer_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    allowNull: false,
   },
-  question_text: {
+  answer_text: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  // Add question related fields here once we know what we will ask.
+  is_correct: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
+  // Add any other answer-related fields as needed
 });
 
-module.exports = question;
+module.exports = answer;

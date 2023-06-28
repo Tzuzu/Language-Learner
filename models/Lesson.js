@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const db = require(''); //will need to be sure to add config database here or utils
+const db = require('../config/connection'); 
 
-const Lesson = sequelize.define('Lesson', {
+const lesson = sequelize.define('lesson', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -19,4 +19,4 @@ const Lesson = sequelize.define('Lesson', {
   // add lessons
 });
 
-module.exports = Lesson;
+module.exports = lesson;

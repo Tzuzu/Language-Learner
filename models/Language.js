@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize'); 
-const sequelize = require('..') // will need to import the config database here
+const sequelize = require('../config/connection') 
 
-const Language = sequelize.define('Language', {
+const language = sequelize.define('language', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -15,4 +15,4 @@ const Language = sequelize.define('Language', {
     // add language related fields right here as needed for the 3 languages
 });
 
-module.exports = Language;
+module.exports = language;

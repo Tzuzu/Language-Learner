@@ -1,25 +1,25 @@
 // Import Sequelize and database configuration
 const Sequelize = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection');
 
 // Import all of the models needed from the models folder
-const Language = require('./language');
-const Lesson = require('./lesson');
-const Question = require(''); //will import the question.js when I can get it to connect
+const language = require('./language');
+const lesson = require('./lesson');
+const question = require('./Question');
 const User = require('./user');
 
 // Define associations between models
-Language.hasMany(User, { foreignKey: 'languageId' });
-Language.hasOne(Lesson);
-Lesson.belongsTo(Language);
-Lesson.hasMany(Question);
-Question.belongsTo(Lesson);
+language.hasMany(User, { foreignKey: 'languageId' });
+language.hasOne(lesson);
+lesson.belongsTo(language);
+lesson.hasMany(question);
+question.belongsTo(lesson);
 
 // Initialize models here
 const models = {
-  Language: Language.init(sequelize),
-  Lesson: Lesson.init(sequelize),
-  Question: Question.init(sequelize),
+  language: language.init(sequelize),
+  lesson: lesson.init(sequelize),
+  question: question.init(sequelize),
   User: User.init(sequelize),
 };
 
