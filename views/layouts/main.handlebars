@@ -1,1 +1,31 @@
-<!-- main handlebar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+</head>
+<body>
+    <ul>
+        <li>Linguify</li>
+        <li>Feedback &#38; Reviews</li>
+        {{#if logged_in}}
+        <li>Welcome {{user.username}}</li>
+        <li>Logout</li>
+        {{else}}
+        <li>Signup or Login</li>
+        {{/if}}
+    </ul>
+
+<h3>Which language do you wish to learn?</h3>
+    <ul>
+        <li>French</li>
+        <li>Japanese</li>
+        <li>Spanish</li>
+    </ul>
+    
+    {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+</html>
