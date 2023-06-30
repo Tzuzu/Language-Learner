@@ -15,10 +15,6 @@ const review = sequelize.define('review', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  user_email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   review_text: {
     type: DataTypes.TEXT,
     allowNull: false,
