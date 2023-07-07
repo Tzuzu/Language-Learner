@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 const language = require('./language');
 const lesson = require('./lesson');
 const question = require('./Question');
-const User = require('./user');
+const User = require('./User');
 
 // Define associations between models
 language.hasMany(User, { foreignKey: 'languageId' });
@@ -30,3 +30,5 @@ Object.values(models)
 
 // Export models
 module.exports = models;
+
+// need to clean up comments

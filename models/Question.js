@@ -16,3 +16,5 @@ const question = sequelize.define('question', {
 });
 
 module.exports = question;
+
+// clean up comments
