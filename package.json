@@ -1,11 +1,16 @@
 {
+<<<<<<< HEAD
   "name": "language-learner",
+=======
+  "name": "project-2",
+>>>>>>> b080c34bcce0cd915712186d33ae367e3254e982
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tzuzu/Language-Learner.git"
@@ -25,5 +30,12 @@
   "devDependencies": {
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8"
+=======
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "country-flag-icons": "^1.5.7"
+>>>>>>> b080c34bcce0cd915712186d33ae367e3254e982
   }
 }
