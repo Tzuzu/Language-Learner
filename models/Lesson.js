@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
-const db = require(''); //will need to be sure to add config database here or utils
+const sequelize = require('../config/connection');
+//const db = require(''); //will need to be sure to add config database here or utils
 
 const Lesson = sequelize.define('Lesson', {
   id: {
@@ -16,6 +17,8 @@ const Lesson = sequelize.define('Lesson', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  sequelize, 
+  modelName: "lesson"
   // add lessons
 });
 

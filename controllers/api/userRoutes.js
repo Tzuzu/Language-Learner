@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const {User, Post, Comment} = require('../../models');
+const {User} = require('../../models');
 
 
 router.post('/', async (req, res) => {
@@ -43,9 +43,6 @@ router.get('/:userId', async (req, res) => {
     try {
     const user = await User.findByPk(req.params.userId, {
         attributes: {
-            include: [{model: Post}, {model: Comment, include: {
-                model: Post, attributes: ['title']
-            }}],
             exclude: ['password'],
         },
     });
@@ -77,6 +74,6 @@ router.put('/userId', async (req, res) => {
         console.log(error);
         res.status(500).json(error);
     }
-})
+});
 
 module.exports = router;

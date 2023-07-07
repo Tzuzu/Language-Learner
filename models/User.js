@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection');
 
 const User = sequelize.define('User', {
   id: {
@@ -27,12 +27,16 @@ const User = sequelize.define('User', {
       },
   },
 },
-    hooks: {
-        beforeCreate: async (newUserData) => {
-          newUserData.password = await bcrypt.hash(newUserData.password, 10);
-          return newUserData;
-        },
-}
+
+  sequelize, 
+  modelName: "user"
+
+   // hooks: {
+      //  beforeCreate: async (newUserData) => {
+        //  newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        // return newUserData;
+       // },
+//}
 
   // add user related fields here as needed
 });

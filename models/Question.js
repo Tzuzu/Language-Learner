@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection');
 
 const Question = sequelize.define('Question', {
   id: {
@@ -16,6 +16,8 @@ const Question = sequelize.define('Question', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  sequelize, 
+  modelName: "question"
   // Add question related fields here once we know what we will ask.
 });
 

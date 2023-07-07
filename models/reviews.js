@@ -23,6 +23,8 @@ const review = sequelize.define('review', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  sequelize, 
+  modelName: "user"
   // add any other review information here if needed.
 });
 

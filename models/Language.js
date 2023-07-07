@@ -12,6 +12,8 @@ const Language = sequelize.define('Language', {
         type: DataTypes.STRING, 
         allowNull: false,
     },
+    sequelize, 
+    modelName: "language"
     // add language related fields right here as needed for the 3 languages
 });
 

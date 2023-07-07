@@ -1,11 +1,10 @@
 // Import Sequelize and database configuration
-const Sequelize = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection');
 
 // Import all of the models needed from the models folder
 const Language = require('./language');
 const Lesson = require('./lesson');
-const Question = require(''); //will import the question.js when I can get it to connect
+const Question = require('./question'); //will import the question.js when I can get it to connect
 const User = require('./user');
 
 // Define associations between models

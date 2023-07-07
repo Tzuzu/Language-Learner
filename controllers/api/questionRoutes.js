@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/french/', async (req, res) => {
+router.get('/french', async (req, res) => {
     try {
     res.render('')
     }
@@ -38,7 +38,7 @@ router.get('/spanish', async (req, res) => {
 
 router.get('/japanese', async (req, res) => {
     try {
-    res.render('')
+    res.render('japanese')
     }
     catch (error) {
         console.log(error);
