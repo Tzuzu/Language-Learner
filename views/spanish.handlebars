@@ -1,0 +1,21 @@
+<button type="button" class="button" id="start">Start Quiz</button>
+
+{{#each questions as |question questionId|}}
+  <div id="question-{{questionId}}" class="question">
+    {{ question.question_text }}
+    <br>
+    {{#each question.answers as |answer answerId|}}
+      <div>{{answer.answer_text}}</div>
+    {{/each}}
+  </div>   
+{{/each}}
+
+<div id="results">
+    <p>Congrats, you've finished the lesson! You may retry this lesson, leave a review, or return home to take another lesson!</p>
+    <br>
+    <button type="button" id="review">Leave a Review</button>
+    <button type="button" id="retry">Retry</button>
+    <button type="button" id="home">Return Home</button>
+</div>
+
+<script src="./js/spanish.js"></script>
