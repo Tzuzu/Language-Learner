@@ -20,4 +20,3 @@ const lesson = sequelize.define('lesson', {
 });
 
 module.exports = lesson;
-//clean up comments

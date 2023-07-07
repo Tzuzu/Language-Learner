@@ -24,4 +24,3 @@ const review = sequelize.define('review', {
 
 module.exports = review;
 
-// clean up comments

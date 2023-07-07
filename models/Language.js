@@ -17,4 +17,3 @@ const language = sequelize.define('language', {
 
 module.exports = language;
 
-// clean up comments

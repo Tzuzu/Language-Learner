@@ -31,4 +31,3 @@ Object.values(models)
 // Export models
 module.exports = models;
 
-// need to clean up comments
