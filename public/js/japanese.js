@@ -37,7 +37,7 @@ function checkAnswer() {
                 finalScore += 20;
             }
 
-            displayQuestions();
+            hideQuestions();
             currentQuestion++;
             submitBtn.style.display = "none"
             if (currentQuestion > lastQuestion) {
