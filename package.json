@@ -1,16 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "language-learner",
-=======
-  "name": "project-2",
->>>>>>> b080c34bcce0cd915712186d33ae367e3254e982
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tzuzu/Language-Learner.git"
@@ -23,19 +18,10 @@
   },
   "homepage": "https://github.com/Tzuzu/Language-Learner#readme",
   "dependencies": {
-    "country-flag-icons": "^1.5.7",
-    "dotenv": "^16.3.1",
+    "dot": "^1.1.3",
+    "env": "^0.0.2",
     "sequelize": "^6.32.1"
   },
-  "devDependencies": {
-    "eslint-config-prettier": "^8.8.0",
-    "prettier": "^2.8.8"
-=======
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "country-flag-icons": "^1.5.7"
->>>>>>> b080c34bcce0cd915712186d33ae367e3254e982
-  }
+  "devDependencies": {},
+  "description": ""
 }
