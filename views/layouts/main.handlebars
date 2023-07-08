@@ -12,25 +12,64 @@
     </head>
     <body>
         <ul>
-            <li>Linguify</li>
-            <li>Feedback &#38; Reviews</li>
-            {{#if logged_in}}
-                <li>Welcome {{user.username}}</li>
-                <li>Logout</li>
-            {{else}}
-                <li>Signup or Login</li>
-            {{/if}}
+            <nav class='navbar bg-body-tertiary'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>
+                        <img
+                            src='../../assets/images/Web capture_6-7-2023_195640_127.0.0.1.jpeg'
+                            alt='Logo'
+                            width='30'
+                            height='24'
+                            class='d-inline-block align-text-top'
+                        />
+                        Linguify
+                    </a>
+                </div>
+                <li><button type='button' class='btn btn-danger'>Feedback &#38;
+                        Reviews</button></li>
+                {{#if logged_in}}
+                    <li>Welcome {{user.username}}</li>
+                    <li><button
+                            type='button'
+                            class='btn btn-danger'
+                        >Logout</button></li>
+                {{else}}
+                    <li><button type='button' class='btn btn-danger'>Signup or
+                            Login</button></li>
+                {{/if}}
+            </nav>
         </ul>
 
         {{{body}}}
 
         {{#if logged_in}}
+
             <h3>Which language do you wish to learn?</h3>
-            <ul>
-                <li>French</li>
-                <li>Japanese</li>
-                <li>Spanish</li>
-            </ul>
+
+            <a href='#' class='btn btn-primary'>
+                <div class='card' style='width: 18rem;'>
+                    <img src='...' class='card-img-top' alt='...' />
+                    <div class='card-body'>
+                        <p class='card-text'>French</p>
+                    </div>
+                </div>
+            </a>
+            <a href='#' class='btn btn-primary'>
+                <div class='card' style='width: 18rem;'>
+                    <img src='...' class='card-img-top' alt='...' />
+                    <div class='card-body'>
+                        <p class='card-text'>Japanese</p>
+                    </div>
+                </div>
+            </a>
+            <a href='#' class='btn btn-primary'>
+                <div class='card' style='width: 18rem;'>
+                    <img src='...' class='card-img-top' alt='...' />
+                    <div class='card-body'>
+                        <p class='card-text'>Spanish</p>
+                    </div>
+                </div>
+            </a>
         {{/if}}
 
         {{#if logged_in}}

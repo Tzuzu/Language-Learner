@@ -17,11 +17,7 @@ const loginFormHandler = async (event) => {
     } else {
         alert(response.statusText);
     }
-<<<<<<< HEAD
 };
-=======
-}
->>>>>>> b080c34bcce0cd915712186d33ae367e3254e982
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
@@ -38,21 +34,12 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-<<<<<<< HEAD
             document.location.replace('/');
         } else {
             alert(response.statusText);
         }
     }
 };
-=======
-          document.location.replace('/');
-        } else {
-          alert(response.statusText);
-        }
-    }
-}
->>>>>>> b080c34bcce0cd915712186d33ae367e3254e982
 
 document
     .querySelector('.login-form')
@@ -60,8 +47,4 @@ document
 
 document
     .querySelector('.signup-form')
-<<<<<<< HEAD
     .addEventListener('submit', signupFormHandler);
-=======
-    .addEventListener('submit', signupFormHandler);
->>>>>>> b080c34bcce0cd915712186d33ae367e3254e982

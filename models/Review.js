@@ -1,38 +1,37 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/connection');
-//const db = require(''); //will need to be sure to add config database here or utils
 
-class Lesson extends Model {}
-Lesson.init(
+class Review extends Model {}
+Review.init(
     {
-        id: {
+        review_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
-        title: {
+        user_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        content: {
-            type: DataTypes.TEXT,
+        user_email: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        languageId: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'language',
-                key: 'id',
-            },
+        review_text: {
+            type: DataTypes.TEXT,
+            allowNull: false,
         },
     },
     {
         sequelize,
         freezeTableName: true,
-        modelName: 'lesson',
-        // add lessons
+        modelName: 'review',
+        // add any other review information here if needed.
     }
 );
 
-module.exports = Lesson;
+module.exports = Review;
