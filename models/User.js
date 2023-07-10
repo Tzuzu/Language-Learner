@@ -1,7 +1,8 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/connection');
 
-const User = sequelize.define('User', {
+class User extends Model {}
+User.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -26,18 +27,23 @@ const User = sequelize.define('User', {
         len: [8],
       },
   },
-},
-
+  languageId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "language",
+      key: "id"
+    }
+  }
+}},{
   sequelize, 
-  modelName: "user"
-
-   // hooks: {
-      //  beforeCreate: async (newUserData) => {
-        //  newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        // return newUserData;
-       // },
-//}
-
+  freezeTableName: true,
+  modelName: "user",
+  hooks: {
+       beforeCreate: async (newUserData) => {
+         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+       },
+}
   // add user related fields here as needed
 });
 

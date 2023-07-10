@@ -1,7 +1,8 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/connection');
 
-const review = sequelize.define('review', {
+class Review extends Model {}
+Review.init({
   review_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -22,10 +23,11 @@ const review = sequelize.define('review', {
   review_text: {
     type: DataTypes.TEXT,
     allowNull: false,
-  },
+  }},{
   sequelize, 
-  modelName: "user"
+  freezeTableName: true,
+  modelName: "review"
   // add any other review information here if needed.
 });
 
-module.exports = review;
+module.exports = Review;
