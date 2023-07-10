@@ -8,7 +8,7 @@
     {{#each question.answers as |answer answerId|}}
       <input type="radio" data-is-correct="{{answer.is_correct}}" id="answer-q{{questionId}}-a{{answerId}}" onchange="displayButton()"/>
       <label for="answer-q{{questionId}}-a{{answerId}}">{{answer.answer_text}}</label>
-      <button type="button" id="submit" style="hidden">Submit Answer</button>
+      <button type="button" id="submit">Submit Answer</button>
     {{/each}}
     </div>
   </div>   
@@ -22,4 +22,4 @@
     <button type="button" id="home">Return Home</button>
 </div>
 
-<script src="../public/js/japanese.js"></script>
+<script src="/public/js/japanese.js"></script>

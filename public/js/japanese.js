@@ -10,11 +10,11 @@ var lastQuestion = 4;
 var questionList = document.getElementById("question-" + currentQuestion)
 
 
-homeBtn.addEventListener("click", redirectToHome());
-reviewBtn.addEventListener("click", redirectToReview());
-retryBtn.addEventListener("click", retryLesson());
-startBtn.addEventListener("click", startLesson());
-submitBtn.addEventListener("click", checkAnswer());
+homeBtn.addEventListener("click", redirectToHome);
+reviewBtn.addEventListener("click", redirectToReview);
+retryBtn.addEventListener("click", retryLesson);
+startBtn.addEventListener("click", startLesson);
+submitBtn.addEventListener("click", checkAnswer);
 
 
 function startLesson() {
