@@ -1,4 +1,4 @@
-const Lesson = require('../models/lesson');
+const Lesson = require('../models/Lesson');
 const Question = require('../models/Question');
 const Answer = require('../models/answer');
 

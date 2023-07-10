@@ -1,33 +1,17 @@
-// Import Sequelize and database configuration
-const Sequelize = require('sequelize');
-const sequelize = require('../config/connection');
-
 // Import all of the models needed from the models folder
-const language = require('./language');
-const lesson = require('./lesson');
-const question = require('./Question');
+const Language = require('./Language');
+const Lesson = require('./Lesson');
+const Question = require('./Question'); //will import the question.js when I can get it to connect
 const User = require('./User');
+// const Review = require('./Review');
 
 // Define associations between models
-language.hasMany(User, { foreignKey: 'languageId' });
-language.hasOne(lesson);
-lesson.belongsTo(language);
-lesson.hasMany(question);
-question.belongsTo(lesson);
-
-// Initialize models here
-const models = {
-  language: language.init(sequelize),
-  lesson: lesson.init(sequelize),
-  question: question.init(sequelize),
-  User: User.init(sequelize),
-};
-
-// Run any model associations defined in the models 
-Object.values(models)
-  .filter((model) => typeof model.associate === 'function')
-  .forEach((model) => model.associate(models));
+Language.hasMany(User, { foreignKey: 'languageId' });
+User.belongsTo(Language, { foreignKey: 'languageId', onDelete: "CASCADE" });
+Language.hasMany(Lesson, { foreignKey: 'languageId' });
+Lesson.belongsTo(Language, { foreignKey: 'languageId', onDelete: "CASCADE" });
+Lesson.hasMany(Question, { foreignKey: 'lessonId' });
+Question.belongsTo(Lesson, { foreignKey: 'lessonId' });
 
 // Export models
-module.exports = models;
-
+module.exports = { Language, User, Lesson, Question };

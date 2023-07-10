@@ -1,7 +1,9 @@
-const { DataTypes } = require('sequelize');
-const db = require('../config/connection'); 
+const { DataTypes, Model} = require('sequelize');
+const sequelize = require('../config/connection');
+//const db = require(''); //will need to be sure to add config database here or utils
 
-const lesson = sequelize.define('lesson', {
+class Lesson extends Model {}
+Lesson.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -16,7 +18,17 @@ const lesson = sequelize.define('lesson', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  languageId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "language",
+      key: "id"
+    }
+  }}, {
+  sequelize, 
+  freezeTableName: true,
+  modelName: "lesson"
   // add lessons
 });
 
-module.exports = lesson;
+module.exports = Lesson;
