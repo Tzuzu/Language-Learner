@@ -1,7 +1,7 @@
 <button type="button" class="button" id="start">Start Quiz</button>
 
 {{#each questions as |question questionId|}}
-  <div id="question-{{questionId}}" class="question" style="hidden">
+  <div id="question-{{questionId}}" class="question" style="display: none">
     {{ question.question_text }}
     <br>
     <div>
@@ -14,7 +14,7 @@
   </div>   
 {{/each}}
 
-<div id="results">
+<div id="results" style="display: none">
     <p>Congrats, you've finished the lesson with a final score of <span id="finalScore">0</span>%! You may retry this lesson, leave a review, or return home to take another lesson!</p>
     <br>
     <button type="button" id="review">Leave a Review</button>
@@ -22,4 +22,4 @@
     <button type="button" id="home">Return Home</button>
 </div>
 
-<script src="./js/japanese.js"></script>
+<script src="../public/js/japanese.js"></script>
