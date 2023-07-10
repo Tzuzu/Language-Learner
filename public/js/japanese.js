@@ -5,9 +5,9 @@ var startBtn = document.getElementById("start");
 var submitBtn = document.getElementById("submit");
 var results = document.getElementById("results");
 var finalScore = document.getElementById("finalScore");
+var questionList = document.getElementById("question-" + currentQuestion)
 var currentQuestion = 0;
 var lastQuestion = 4;
-var questionList = document.getElementById("question-" + currentQuestion)
 
 
 homeBtn.addEventListener("click", redirectToHome);
