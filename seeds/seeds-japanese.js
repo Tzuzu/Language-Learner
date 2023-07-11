@@ -1,6 +1,6 @@
-const Lesson = require('../models/lesson');
-const Question = require('../models/question');
-const Answer = require('./answer');
+const Lesson = require('../models/Lesson');
+const Question = require('../models/Question');
+// const Answer = require('./answer');
 
 const createQuestionsWithAnswers = async (lessonId, questionText, answers) => {
   try {

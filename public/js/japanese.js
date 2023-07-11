@@ -19,7 +19,7 @@ submitBtn.addEventListener("click", checkAnswer);
 
 function startLesson() {
     startBtn.style.display = "none";
-    questionList.style.display = "block";
+    // questionList.style.display = "block";
 }
 
 function hideQuestions() {
@@ -44,8 +44,6 @@ function checkAnswer() {
                 questionList.style.display = "none";
                 results.style.display = "block";
             }
-
-            return;
         }
     }
 }

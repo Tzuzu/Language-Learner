@@ -8,11 +8,12 @@
     {{#each question.answers as |answer answerId|}}
       <input type="radio" data-is-correct="{{answer.is_correct}}" id="answer-q{{questionId}}-a{{answerId}}" onchange="displayButton()"/>
       <label for="answer-q{{questionId}}-a{{answerId}}">{{answer.answer_text}}</label>
-      <button type="button" id="submit">Submit Answer</button>
     {{/each}}
     </div>
   </div>   
 {{/each}}
+
+<button type="button" id="submit" style="display: none">Submit Answer</button>
 
 <div id="results" style="display: none">
     <p>Congrats, you've finished the lesson with a final score of <span id="finalScore">0</span>%! You may retry this lesson, leave a review, or return home to take another lesson!</p>
@@ -22,4 +23,4 @@
     <button type="button" id="home">Return Home</button>
 </div>
 
-<script src="/public/js/japanese.js"></script>
+<script src="./js/japanese.js"></script>
