@@ -26,7 +26,7 @@ const createQuestionsWithAnswers = async (lessonId, questionText, answers) => {
 const lessonId = 3; // lesson ID for Japanese
 
 // Create a question here
-const question = [
+const questions = [
   {
     question_text: 'やまださんは学生でわありません。What does "学生" mean?',
     answers: [
@@ -74,7 +74,7 @@ const question = [
   },
 ];
 const createQuestions = async () => {
-  for (const question of question) {
+  for (const question of questions) {
     await createQuestionsWithAnswers(lessonId, question.question_text, question.answers);
   }
 };
