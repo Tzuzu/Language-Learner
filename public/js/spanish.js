@@ -5,6 +5,7 @@ var startBtn = document.getElementById("start");
 var question = document.getElementById("question");
 var results = document.getElementById("results");
 var finalScore = document.getElementById("finalScore");
+var score = 0;
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
 var choiceA = document.getElementById("A");
@@ -83,13 +84,14 @@ function showQuestions() {
 
 function checkAnswer(answer) {
     if (answer === questions[currentQuestion].correct) {
-        finalScore += 20;
+        score += 20;
     }
     currentQuestion++
     if (currentQuestion > lastQuestion) {
         quiz.style.display = "none";
         results.style.display = "block";
         quizCompleted = true;
+        finalScore.innerHTML = score;
     } else {
         showQuestions();
     }
