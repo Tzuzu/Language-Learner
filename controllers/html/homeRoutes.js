@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
 });
 router.get('/french', async (req, res) => {
     try {
-    res.render('')
+    res.render('french')
     }
     catch (error) {
         console.log(error);
@@ -16,7 +16,7 @@ router.get('/french', async (req, res) => {
 
 router.get('/spanish', async (req, res) => {
     try {
-    res.render('')
+    res.render('spanish')
     }
     catch (error) {
         console.log(error);
