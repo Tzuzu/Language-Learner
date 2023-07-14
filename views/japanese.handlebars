@@ -12,20 +12,7 @@
     <img src="https://flagsapi.com/JP/shiny/64.png">
     <img src="https://flagsapi.com/MX/shiny/64.png">
     <img src="https://flagsapi.com/FR/shiny/64.png">
-    {{#each questions as |question questionId|}}
-    <div id="question-{{questionId}}" class="question" style="display: none;">
-        {{question.question_text}}
-        <br />
-        <div>
-            {{#each question.answers as |answer answerId|}}
-                <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        data-is-correct="{{answer.is_correct}}"
-                        id="answer-q{{questionId}}-a{{answerId}}"
-                        onchange="displayButton()"
-                    />
+   
                     <label
                         class="form-check-label"
                         for="answer-q{{questionId}}-a{{answerId}}"
