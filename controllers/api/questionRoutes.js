@@ -6,9 +6,10 @@ router.get('/', async (req, res) => {
     try {
     const questionData = await Question.findAll();
     const question = questionData.map((question) => question.get({ plain: true}));
-    res.render("", {
+    res.render("japanese", {
         question: questionData
-    })
+    });
+   res.status()
     }
     catch (error) {
         console.log(error);

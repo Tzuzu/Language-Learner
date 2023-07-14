@@ -8,7 +8,8 @@ router.post('/', async (req, res) => {
 const newUser = await User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    languageId: req.body.languageId
 })
 res.status(201).json(newUser);
     } catch (error) {
@@ -21,15 +22,7 @@ router.get('/', async (res) => {
     try {
 const users = await User.findAll({
     attributes: {
-        exclude: ['password'],
-        include: [
-            [
-                sequelize.literal('(SELECT COUNT(*) FROM post WHERE post.userId = user.id)'), 'postCount',
-            ],
-            [
-                sequelize.literal('(SELECT COUNT(*) FROM comment WHERE comment.userId = user.id)'), 'commentsCount',
-            ]
-        ]
+        exclude: ['password']
     },
 });
 res.status(200).json(users) 
@@ -56,24 +49,24 @@ router.get('/:userId', async (req, res) => {
     }
 });
 
-router.put('/userId', async (req, res) => {
-    try {
-       const updatedUser = await User.update(req.body, {
-        where: {
-            id: req.params.userId
-        },
-        individualHooks: true,
-       }); 
+// router.put('/userId', async (req, res) => {
+//     try {
+//        const updatedUser = await User.update(req.body, {
+//         where: {
+//             id: req.params.userId
+//         },
+//         individualHooks: true,
+//        }); 
 
-       if (!updatedUser[0]) return res.status(404).json({message:
-        'No user found.'})
+//        if (!updatedUser[0]) return res.status(404).json({message:
+//         'No user found.'})
 
-       console.log(updatedUser);
-       res.status(202).json(updatedUser)
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(error);
-    }
-});
+//        console.log(updatedUser);
+//        res.status(202).json(updatedUser)
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).json(error);
+//     }
+// });
 
 module.exports = router;
