@@ -25,8 +25,6 @@
                         Linguify
                     </a>
                 </div>
-                <li><button type='button' class='btn btn-danger'>Feedback &#38;
-                        Reviews</button></li>
                 {{#if logged_in}}
                     <li>Welcome {{user.username}}</li>
                     <li><button
@@ -43,8 +41,12 @@
         {{{body}}}
 
         {{#if logged_in}}
-
             <h3>Which language do you wish to learn?</h3>
+                <ul>
+                    <li><a href="french">French</a></li>
+                    <li><a href="japanese">Japanese</a></li>
+                    <li><a href="spanish">Spanish</a></li>
+                </ul>
 
             <a href='#' class='btn btn-primary'>
                 <div class='card' style='width: 18rem;'>
