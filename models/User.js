@@ -27,13 +27,6 @@ User.init({
         len: [8],
       },
   },
-  languageId: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "language",
-      key: "id"
-    }
-  }
 }},{
   sequelize, 
   freezeTableName: true,
