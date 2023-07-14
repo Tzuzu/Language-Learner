@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
     const question = questionData.map((question) => question.get({ plain: true}));
     res.render("japanese", {
         question: questionData
-    })
+    });
+   res.status()
     }
     catch (error) {
         console.log(error);

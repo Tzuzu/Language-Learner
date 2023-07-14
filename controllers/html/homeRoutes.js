@@ -1,12 +1,36 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
+const { User } = require('../../models/User');
 
-router.get('/', async (req, res) => {
-
-});
-router.get('/french', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
-    res.render('')
+        const userData = await User.findAll({
+          attributes: { exclude: ['password'] },
+          order: [['name', 'ASC']],
+        });
+    
+        const users = userData.map((project) => project.get({ plain: true }));
+    
+        res.render('homepage', {
+          users,
+          // Pass the logged in flag to the template
+          logged_in: req.session.logged_in,
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+});
+
+
+router.get('/french', withAuth, async (req, res) => {
+    try {
+        const users = userData.map((project) => project.get({ plain: true }));
+    res.render('french', {
+        users,
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+    })
     }
     catch (error) {
         console.log(error);
@@ -14,9 +38,14 @@ router.get('/french', async (req, res) => {
     }
 });
 
-router.get('/spanish', async (req, res) => {
+router.get('/spanish', withAuth, async (req, res) => {
     try {
-    res.render('')
+    const users = userData.map((project) => project.get({ plain: true }));
+    res.render('spanish', {
+        users,
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+    })
     }
     catch (error) {
         console.log(error);
@@ -24,14 +53,29 @@ router.get('/spanish', async (req, res) => {
     }
 });
 
-router.get('/japanese', async (req, res) => {
+router.get('/japanese', withAuth, async (req, res) => {
     try {
-    res.render('japanese')
+    const users = userData.map((project) => project.get({ plain: true }));
+    res.render('japanese', {
+        users,
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+    })
     }
     catch (error) {
         console.log(error);
         res.status(500).json(error);
     }
 });
+
+router.get('/login', (req, res) => {
+    // If a session exists, redirect the request to the homepage
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
 
 module.exports = router;
