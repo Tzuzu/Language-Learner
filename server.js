@@ -11,21 +11,23 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// const hbs = exphbs.create({ helpers });
+// const hbs = exphbs.create({ helpers }); 
 const hbs = exphbs.create({});
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//const sess = {
-// secret: 'Super secret secret',
-//cookie: {},
-// resave: false,
-// saveUninitialized: true,
-// store: new SequelizeStore({
-//  db: sequelize
-// })
+// app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// const sess = {
+//    secret: 'Super secret secret',
+//    cookie: {},
+//    resave: false,
+//    saveUninitialized: true,
+//    store: new SequelizeStore({
+//      db: sequelize
+//    })
 //  };
 
 //app.use(session(sess));
@@ -35,8 +37,8 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-sequelize.sync().then(() => {
+sequelize.sync().then( () => {
     app.listen(PORT, () => {
         console.log(`App listening on port ${PORT}`);
-    });
-});
+    })
+})

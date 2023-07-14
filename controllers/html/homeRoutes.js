@@ -1,11 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 
-router.get('/', async (req, res) => {});
+router.get('/', async (req, res) => {
+
+});
 router.get('/french', async (req, res) => {
     try {
-        res.render('');
-    } catch (error) {
+    res.render('french')
+    }
+    catch (error) {
         console.log(error);
         res.status(500).json(error);
     }
@@ -13,8 +16,9 @@ router.get('/french', async (req, res) => {
 
 router.get('/spanish', async (req, res) => {
     try {
-        res.render('');
-    } catch (error) {
+    res.render('spanish')
+    }
+    catch (error) {
         console.log(error);
         res.status(500).json(error);
     }
@@ -22,8 +26,9 @@ router.get('/spanish', async (req, res) => {
 
 router.get('/japanese', async (req, res) => {
     try {
-        res.render('japanese');
-    } catch (error) {
+    res.render('japanese')
+    }
+    catch (error) {
         console.log(error);
         res.status(500).json(error);
     }

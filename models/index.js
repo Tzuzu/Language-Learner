@@ -7,9 +7,9 @@ const User = require('./User');
 
 // Define associations between models
 Language.hasMany(User, { foreignKey: 'languageId' });
-User.belongsTo(Language, { foreignKey: 'languageId', onDelete: 'CASCADE' });
+User.belongsTo(Language, { foreignKey: 'languageId', onDelete: "CASCADE" });
 Language.hasMany(Lesson, { foreignKey: 'languageId' });
-Lesson.belongsTo(Language, { foreignKey: 'languageId', onDelete: 'CASCADE' });
+Lesson.belongsTo(Language, { foreignKey: 'languageId', onDelete: "CASCADE" });
 Lesson.hasMany(Question, { foreignKey: 'lessonId' });
 Question.belongsTo(Lesson, { foreignKey: 'lessonId' });
 

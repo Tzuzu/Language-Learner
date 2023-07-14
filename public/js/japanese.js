@@ -1,69 +1,111 @@
-var homeBtn = document.getElementById('home');
-var reviewBtn = document.getElementById('review');
-var retryBtn = document.getElementById('retry');
-var startBtn = document.getElementById('start');
-var submitBtn = document.getElementById('submit');
-var results = document.getElementById('results');
-var finalScore = document.getElementById('finalScore');
+var homeBtn = document.getElementById("home");
+var reviewBtn = document.getElementById("review");
+var retryBtn = document.getElementById("retry");
+var startBtn = document.getElementById("start");
+var question = document.getElementById("question");
+var results = document.getElementById("results");
+var finalScore = document.getElementById("finalScore");
+var score = 0;
+var quiz = document.getElementById("quiz");
+var question = document.getElementById("question");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
+var choiceD = document.getElementById("D");
 var currentQuestion = 0;
+var quizCompleted = false;
 var lastQuestion = 4;
-var questionList = document.getElementById('question-' + currentQuestion);
 
-homeBtn.addEventListener('click', redirectToHome());
-reviewBtn.addEventListener('click', redirectToReview());
-retryBtn.addEventListener('click', retryLesson());
-startBtn.addEventListener('click', startLesson());
-submitBtn.addEventListener('click', checkAnswer());
+var questions = [ 
+    {
+        question: `やまださんは学生でわありません。What does "学生" mean?`,
+            choiceA: "Teacher",
+            choiceB: "Student",
+            choiceC: "Doctor",
+            choiceD: "Lawyer",
+        
+            correct: "B"
+    },
+    {
+        question: "What is 100 in Japanese?",
+            choiceA: "百",
+            choiceB: "千",
+            choiceC: "十",
+            choiceD: "一",
 
-function startLesson() {
-    startBtn.style.display = 'none';
-    questionList.style.display = 'block';
-}
+            correct: "A"
+    },
+    {
+        question: "初めまして。What does this mean?",
+            choiceA: "Hello",
+            choiceB: "Good day",
+            choiceC: "It is nice to meet you",
+            choiceD: "Good night",
 
-function hideQuestions() {
-    for (let i = 0; i < 4; i++) {
-        let hideQuestion = (document.getElementById(
-            'question-' + currentQuestion
-        ).style.display = 'hidden');
+            correct: "C"
+    },
+    {
+        question: `私はきのう京都に行きました。Which city is "京都（きょうと）"?`,
+            choiceA: "Osaka",
+            choiceB: "Tokyo",
+            choiceC: "Sendai",
+            choiceD: "Kyoto",
+
+            correct: "D"
+    },
+    {
+        question: `あれは日本の映画じゃないかったです。What does the Kanji "えいが"　mean?`,
+            choiceA: "Book",
+            choiceB: "Manga",
+            choiceC: "Game",
+            choiceD: "Movie",
+
+            correct: "D"
     }
+];
+
+startBtn.addEventListener("click", function() {
+    startQuiz();
+    showQuestions();
+});
+
+function startQuiz() {
+    startBtn.style.display = "none";
+    quiz.style.display = "block";
 }
 
-function checkAnswer() {
-    for (let i = 0; i < 4; i++) {
-        let inputElement = document.getElementById(
-            'answer-q' + currentQuestion + '-a' + i
-        );
-        if (inputElement.checked) {
-            displayButton();
-            if (inputElement.getAttribute('data-is-correct') == 'true') {
-                finalScore += 20;
-            }
+function showQuestions() {
+    question.innerHTML = questions[currentQuestion].question
+    choiceA.innerHTML = questions[currentQuestion].choiceA
+    choiceB.innerHTML = questions[currentQuestion].choiceB
+    choiceC.innerHTML = questions[currentQuestion].choiceC
+    choiceD.innerHTML = questions[currentQuestion].choiceD
+}
 
-            hideQuestions();
-            currentQuestion++;
-            submitBtn.style.display = 'none';
-            if (currentQuestion > lastQuestion) {
-                questionList.style.display = 'none';
-                results.style.display = 'block';
-            }
-
-            return;
-        }
+function checkAnswer(answer) {
+    if (answer === questions[currentQuestion].correct) {
+        score += 20;
     }
-}
+    currentQuestion++
+    if (currentQuestion > lastQuestion) {
+        quiz.style.display = "none";
+        results.style.display = "block";
+        quizCompleted = true;
+        finalScore.innerHTML = score;
+    } else {
+        showQuestions();
+    }
 
-function displayButton() {
-    submitBtn.style.display = 'block';
 }
 
 function redirectToHome() {
-    window.location.href = '/';
+    window.location.href ="/"
 }
 
 function redirectToReview() {
-    window.location.href = '/reviews';
+    window.location.href ="/reviews"
 }
 
 function retryLesson() {
-    window.location.reload();
+    window.location.reload()
 }
