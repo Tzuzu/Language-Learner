@@ -9,7 +9,6 @@ const newUser = await User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    languageId: req.body.languageId
 })
 res.status(201).json(newUser);
     } catch (error) {
