@@ -9,7 +9,6 @@ const newUser = await User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    languageId: req.body.languageId
 })
 res.status(201).json(newUser);
     } catch (error) {
@@ -48,25 +47,5 @@ router.get('/:userId', async (req, res) => {
         res.status(500).json(error);
     }
 });
-
-// router.put('/userId', async (req, res) => {
-//     try {
-//        const updatedUser = await User.update(req.body, {
-//         where: {
-//             id: req.params.userId
-//         },
-//         individualHooks: true,
-//        }); 
-
-//        if (!updatedUser[0]) return res.status(404).json({message:
-//         'No user found.'})
-
-//        console.log(updatedUser);
-//        res.status(202).json(updatedUser)
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).json(error);
-//     }
-// });
 
 module.exports = router;
