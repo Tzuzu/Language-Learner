@@ -24,7 +24,7 @@ User.init({
     unique: true,
       validate: {
         isEmail: true,
-  },
+  }},
   password: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -32,12 +32,13 @@ User.init({
         len: [8],
       },
   },
-}},{
+},{
   sequelize, 
   freezeTableName: true,
   modelName: "user",
   hooks: {
        beforeCreate: async (newUserData) => {
+        console.log(JSON.stringify(newUserData))
          newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
        },
