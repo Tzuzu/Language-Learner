@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS language_db;
 CREATE DATABASE language_db;
 
--- USE language_db;
+USE language_db;
 
 -- CREATE TABLE user(
 --    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
