@@ -13,13 +13,14 @@
             type='text/css'
             href='../../public/css/main.css'
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:ital@1&family=Raleway:wght@300&display=swap" rel="stylesheet">
         <title>Language Learning</title>
     </head>
     <body>
-        <ul>
             <nav 
-            class='navbar bg-body-tertiary'
-            >
+            class='navbar bg-body-tertiary'>
                 <div class='container-fluid'>
                     <a class='navbar-brand' href='#'>
                         <img
@@ -27,38 +28,24 @@
                             alt='Logo'
                             width='30'
                             height='24'
-                            class='d-inline-block align-text-top'
                         />
                         Linguify
                     </a>
-                </div>
+                
                 {{#if logged_in}}
-                    <li>
-                    Welcome
-                    {{user.username}}
-                </li>
-                <li>
-                    <button
-                        type="button"
-                        class="btn btn-danger"
-                        class="log-button"
-                    >
+                    
+                    <button type="button" class="btn btn-danger" class="log-button">
                         Logout
                     </button>
-                </li>
+                
                 {{else}}
-                <li>
-                    <button
-                        type="button"
-                        class="btn btn-danger"
-                        class="log-button"
-                    >
+                
+                    <button type="button" class="btn btn-danger" class="log-button">
                         Signup or Login
                     </button>
-                </li>
+                </div>
                 {{/if}}
             </nav>
-        </ul>
          {{{body}}} {{#if logged_in}}
         <main>
             <section class="py-5 text-center container">
