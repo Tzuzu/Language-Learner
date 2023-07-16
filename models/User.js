@@ -1,7 +1,12 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-class User extends Model {}
+class User extends Model {
+  checkPassword(loginPw) {
+  return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 User.init({
   id: {
     type: DataTypes.INTEGER,
@@ -27,13 +32,6 @@ User.init({
         len: [8],
       },
   },
-  languageId: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "language",
-      key: "id"
-    }
-  }
 }},{
   sequelize, 
   freezeTableName: true,
