@@ -25,25 +25,12 @@
         <title>Language Learning</title>
     </head>
     <body>
-      <nav  style="background-color: #b89685;">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img
-                            src="../../public/assets/images/logo.jpeg"
-                            alt="Logo"
-                            width="40"
-                            height="40"
-                        />
-                        Linguify
-                    </a>
+      {{#if logged_in}}
                 
-                <!-- {{#if logged_in}} -->
-                
-                <button type="button" class="btn btn-danger" id="log-button">
+                <button type="button" class="btn btn-danger" id="logout">
                         Logout
                 </button>
-                <!-- {{/if}} -->
-      </nav>
+      {{/if}}
       <div>
         <a href="japanese" class="options">Go to Japanese lessons.</a>
       </div>

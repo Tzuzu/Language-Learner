@@ -12,13 +12,13 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="../public/css/main.css"
+            href="/css/main.css"
             
         />
         <link
             rel="stylesheet"
             type="text/css"
-            href="../public/css/quiz.css"
+            href="/css/quiz.css"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,25 +26,12 @@
         <title>Language Learning</title>
     </head>
   <body>
-      <nav  style="background-color: #b89685;">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img
-                            src="../../public/assets/images/logo.jpeg"
-                            alt="Logo"
-                            width="40"
-                            height="40"
-                        />
-                        Linguify
-                    </a>
-                
-                {{#if logged_in}}
+      {{#if logged_in}}
                 
                 <button type="button" class="btn btn-danger" id="logout">
                         Logout
                 </button>
-                {{/if}}
-      </nav>
+      {{/if}}
       <div>
         <a href="japanese" class="options">Go to Japanese lessons.</a>
       </div>
@@ -74,7 +61,7 @@
 <!--This section gives the results with buttons to go back to the home page, review page, or retry the lesson.-->
     <div id='results' style="display: none">
         <div class="p-5 text-center bg-body-tertiary rounded-3">
-    <img src="../public/assets/images/logo.jpeg" alt="logo" width="100" height="100"><use xlink:href="#bootstrap"></use></img>
+    <img src="./images/logo.jpeg" alt="logo" width="100" height="100"><use xlink:href="#bootstrap"></use></img>
     <h1 class="text-body-emphasis">CONGRATULATIONS!</h1>
     <p class="col-lg-8 mx-auto fs-5 text-muted">
       Congrats, you've finished the lesson with a final score of

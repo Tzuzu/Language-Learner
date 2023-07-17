@@ -12,12 +12,12 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="../../public/css/main.css"
+            href="css/main.css"
         />
         <link
             rel="stylesheet"
             type="text/css"
-            href="../../public/css/quiz.css"
+            href="css/quiz.css"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,24 +26,12 @@
     </head>
     <body>
       <nav  style="background-color: #b89685;">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img
-                            src="../../public/assets/images/logo.jpeg"
-                            alt="Logo"
-                            width="40"
-                            height="40"
-                        />
-                        Linguify
-                    </a>
-                
                 {{#if logged_in}}
                 
                 <button type="button" class="btn btn-danger" id="log-button">
                         Logout
                 </button>
                 {{/if}}
-      </nav>
       <div>
         <a href="french" class="options">Go to French lessons.</a>
       </div>

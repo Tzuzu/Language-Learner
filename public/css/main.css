@@ -64,3 +64,19 @@ nav {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
 }
+
+#sign-in-logo {
+    margin-left: 540px;
+    margin-top: 10%;
+}
+
+#email-signin {
+    margin-left: 530px;
+    margin-right: 520px;
+}
+
+#sign-button {
+    margin-left: 800px;
+    margin-right: 800px;
+    margin-top: 50px;
+}

@@ -97,6 +97,9 @@ function checkAnswer(answer) {
     }
 }
 
+homeBtn.addEventListener("click", redirectToHome);
+retryBtn.addEventListener("click", retryLesson);
+
 function redirectToHome() {
     window.location.href = '/';
 }

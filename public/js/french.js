@@ -97,6 +97,9 @@ function checkAnswer(answer) {
     }
 }
 
+homeBtn.addEventListener("click", redirectToHome);
+retryBtn.addEventListener("click", retryLesson);
+
 function displayButton() {
     submitBtn.style.display = 'block';
 }
@@ -104,11 +107,6 @@ function displayButton() {
 function redirectToHome() {
     window.location.href = '/';
 }
-
-function redirectToReview() {
-    window.location.href = '/reviews';
-}
-
 function retryLesson() {
     window.location.reload();
 }
