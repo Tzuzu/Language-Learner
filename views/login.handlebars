@@ -11,7 +11,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="../../public/css/main.css"
+            href="css/main.css"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,71 +22,44 @@
         <title>Language Learning</title>
     </head>
     <body>
-        <nav style="background-color: #b89685">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img
-                        src="../../public/assets/images/logo.jpeg"
-                        alt="Logo"
-                        width="40"
-                        height="40"
-                    />
-                    Linguify
-                </a>
-            </div>
-            {{#if logged_in}}
-            <button
-                id="logout"
-                type="button"
-                class="btn btn-danger"
-                id="log-button"
-            >
-                Logout
-            </button>
-            {{else}}
-            <button
-                type="button"
-                class="btn btn-danger"
-                id="signup-button"
-                class="card-text"
-            >
-                Signup or Login
-            </button>
-            {{/if}}
-        </nav>
         <!-- Sign in form -->
         <div id="sign-in-form" class="form-signin w-100 m-auto">
             <form id="login-form">
-                <img
-                    src="../assets/images/logo.jpeg"
-                    alt="logo"
-                    width="72"
-                    height="57"
-                />
-                <h1 class="h3 mb-3 fw-normal">Sign-In</h1>
-
-                <div class="form-floating">
-                    <input
-                        type="email"
-                        class="form-control"
-                        id="email-login"
-                        placeholder="name@example.com"
+                <div id="sign-in-logo">
+                    <img
+                        src="assets/images/logo.jpeg"
+                        alt="logo"
+                        width="72"
+                        height="57"
                     />
-                    <label for="email-login">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input
-                        type="password"
-                        class="form-control"
-                        id="password-login"
-                        placeholder="Password"
-                    />
-                    <label for="password-login">Password</label>
+                    <h1 class="h3 mb-3 fw-normal">Sign-In</h1>
                 </div>
 
-                <button class="btn btn-danger w-100 py-2" type="submit">
-                    Sign in
-                </button>
+                <div id="email-signin">
+                    <div class="form-floating">
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email-login"
+                            placeholder="name@example.com"
+                        />
+                        <label for="email-login">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password-login"
+                            placeholder="Password"
+                        />
+                        <label for="password-login">Password</label>
+                    </div>
+                </div>
+                <div id="sign-button">
+                    <button class="btn btn-danger w-100 py-2" type="submit">
+                        Sign in
+                    </button>
+                </div>
             </form>
         </div>
 
