@@ -42,7 +42,7 @@ User.init({
         return newUserData;
        },
 }
-  // add user related fields here as needed
+  
 });
 
 module.exports = User;
