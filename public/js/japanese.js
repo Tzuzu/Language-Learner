@@ -1,5 +1,4 @@
 var homeBtn = document.getElementById("home");
-var reviewBtn = document.getElementById("review");
 var retryBtn = document.getElementById("retry");
 var startBtn = document.getElementById("start");
 var question = document.getElementById("question");
@@ -64,48 +63,46 @@ var questions = [
     }
 ];
 
-startBtn.addEventListener("click", function() {
+startBtn.addEventListener("click", function () {
     startQuiz();
     showQuestions();
-});
-
-function startQuiz() {
+  });
+  
+  function startQuiz() {
     startBtn.style.display = "none";
-    quiz.style.display = "block";
-}
-
-function showQuestions() {
-    question.innerHTML = questions[currentQuestion].question
-    choiceA.innerHTML = questions[currentQuestion].choiceA
-    choiceB.innerHTML = questions[currentQuestion].choiceB
-    choiceC.innerHTML = questions[currentQuestion].choiceC
-    choiceD.innerHTML = questions[currentQuestion].choiceD
-}
-
-function checkAnswer(answer) {
+    quizElement.style.display = "block";
+  }
+  
+  function showQuestions() {
+    questionElement.textContent = questions[currentQuestion].question;
+    choiceAElement.textContent = questions[currentQuestion].choiceA;
+    choiceBElement.textContent = questions[currentQuestion].choiceB;
+    choiceCElement.textContent = questions[currentQuestion].choiceC;
+    choiceDElement.textContent = questions[currentQuestion].choiceD;
+    currentQuestionElement.textContent = `Question ${currentQuestion + 1}`;
+  }
+  
+  function checkAnswer(answer) {
     if (answer === questions[currentQuestion].correct) {
-        score += 20;
+      score += 20;
     }
-    currentQuestion++
+    currentQuestion++;
     if (currentQuestion > lastQuestion) {
-        quiz.style.display = "none";
-        results.style.display = "block";
-        quizCompleted = true;
-        finalScore.innerHTML = score;
+      quizElement.style.display = "none";
+      resultsElement.style.display = "block";
+      finalScoreElement.textContent = score;
     } else {
-        showQuestions();
+      showQuestions();
     }
-
-}
-
-function redirectToHome() {
-    window.location.href ="/"
-}
-
-function redirectToReview() {
-    window.location.href ="/reviews"
-}
-
-function retryLesson() {
-    window.location.reload()
-}
+  }
+  
+  homeBtn.addEventListener("click", redirectToHome);
+  retryBtn.addEventListener("click", retryLesson);
+  
+  function redirectToHome() {
+    window.location.href = "/";
+  }
+  
+  function retryLesson() {
+    window.location.reload();
+  }

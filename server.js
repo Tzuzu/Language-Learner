@@ -33,7 +33,7 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-app.post('/api.users/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
   const { email, password } = req.body;
   const userData = { email, password };
   fs.appendFile('userData.json', JSON.stringify(userData), (err) => {

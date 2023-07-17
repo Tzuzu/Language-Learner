@@ -1,21 +1,27 @@
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
-  const email = document.querySelector('#floatingInput').value.trim();
-  const password = document.querySelector('#floatingPassword').value.trim();
-  const confirmPassword = document.querySelector('#floatingPassword2').value.trim();
-
+  const email = document.querySelector('#email').value.trim();
+  const password = document.querySelector('#password').value.trim();
+  const confirmPassword = document.querySelector('#confirmPassword').value.trim();
   if (email && password && confirmPassword) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    try {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ email, password, confirmPassword }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
+      if (response.ok) {
+        alert('Sign Up Successful');
+        window.location.href = '/homepage';
+        document.location.replace('/');
+      } else {
+        console.log(response);
+        alert(response.statusText);
+      }
+    } catch (error) {
+      console.log(error);
+      alert('An error occurred during sign up.');
     }
   }
 };
