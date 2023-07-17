@@ -3,6 +3,7 @@ const express = require('express');
 const fs = require('fs');
 const session = require('express-session');
 const routes = require('./controllers');
+const signupRoutes = require('./controllers/api/signupRoutes');
 const exphbs = require('express-handlebars');
 
 const sequelize = require('./config/connection');
@@ -32,6 +33,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(routes);
+
+app.use('/signup', signupRoutes);
 
 app.post('/api/users/login', (req, res) => {
   const { email, password } = req.body;
