@@ -12,12 +12,13 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="../../public/css/main.css"
+            href="../public/css/main.css"
+            
         />
         <link
             rel="stylesheet"
             type="text/css"
-            href="../../public/css/quiz.css"
+            href="../public/css/quiz.css"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +38,12 @@
                         Linguify
                     </a>
                 
-                <!-- {{#if logged_in}} -->
+                {{#if logged_in}}
                 
-                <button type="button" class="btn btn-danger" id="log-button">
+                <button type="button" class="btn btn-danger" id="logout">
                         Logout
                 </button>
-                <!-- {{/if}} -->
+                {{/if}}
       </nav>
       <div>
         <a href="japanese" class="options">Go to Japanese lessons.</a>
