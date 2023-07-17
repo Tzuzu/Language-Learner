@@ -1,2 +1,2 @@
-DROP IF DATABASE EXISTS language_db;
+DROP DATABASE IF EXISTS language_db;
 CREATE DATABASE language_db;

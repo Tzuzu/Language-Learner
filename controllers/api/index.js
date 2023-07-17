@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const htmlRoutes = require('../html');
+const userRoutes = require('./userRoutes');
 
-router.use('/', htmlRoutes);
-
-router.use((req, res) => res.send('<h1>Oops! Wrong Route!</h1>'));
+router.use('/user', userRoutes);
 
 module.exports = router;

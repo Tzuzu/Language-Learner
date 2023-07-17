@@ -11,6 +11,39 @@ nav {
     margin: 20px;
 }
 
+#logout {
+    float: right;
+}
+
+#signup-button {
+    float: right;
+}
+
+.card-text {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+.navbar-brand {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+body {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    background-color: #bfada3;
+}
+
+nav {
+    background-color: #b89685;
+    padding: 25px;
+    margin: 20px;
+}
+
 #log-button {
     float: right;
 }
@@ -30,4 +63,20 @@ nav {
     font-family: 'Merriweather', serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
+}
+
+#sign-in-logo {
+    margin-left: 540px;
+    margin-top: 10%;
+}
+
+#email-signin {
+    margin-left: 530px;
+    margin-right: 520px;
+}
+
+#sign-button {
+    margin-left: 800px;
+    margin-right: 800px;
+    margin-top: 50px;
 }

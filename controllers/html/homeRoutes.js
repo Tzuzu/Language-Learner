@@ -4,15 +4,14 @@ const { User } = require('../../models');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // Assuming you want to fetch all users for the homepage
     const users = await User.findAll({
       attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
     });
 
     res.render('homepage', {
       users,
-      logged_in: req.session.logged_in,
+      logged_in: req.session.loggedIn,
+      username: req.session.username,
     });
   } catch (error) {
     console.log(error);
@@ -28,7 +27,7 @@ router.get('/spanish', withAuth, (req, res) => {
   res.render('spanish', { logged_in: req.session.logged_in });
 });
 
-router.get('/japanese', withAuth, (req, res) => {
+router.get('/japanese', (req, res) => {
   res.render('japanese', { logged_in: req.session.logged_in });
 });
 

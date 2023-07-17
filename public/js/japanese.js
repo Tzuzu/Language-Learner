@@ -70,16 +70,16 @@ startBtn.addEventListener("click", function () {
   
   function startQuiz() {
     startBtn.style.display = "none";
-    quizElement.style.display = "block";
+    quiz.style.display = "block";
   }
   
   function showQuestions() {
-    questionElement.textContent = questions[currentQuestion].question;
-    choiceAElement.textContent = questions[currentQuestion].choiceA;
-    choiceBElement.textContent = questions[currentQuestion].choiceB;
-    choiceCElement.textContent = questions[currentQuestion].choiceC;
-    choiceDElement.textContent = questions[currentQuestion].choiceD;
-    currentQuestionElement.textContent = `Question ${currentQuestion + 1}`;
+    question.textContent = questions[currentQuestion].question;
+    choiceA.textContent = questions[currentQuestion].choiceA;
+    choiceB.textContent = questions[currentQuestion].choiceB;
+    choiceC.textContent = questions[currentQuestion].choiceC;
+    choiceD.textContent = questions[currentQuestion].choiceD;
+    currentQuestion.textContent = `Question ${currentQuestion + 1}`;
   }
   
   function checkAnswer(answer) {
@@ -88,9 +88,9 @@ startBtn.addEventListener("click", function () {
     }
     currentQuestion++;
     if (currentQuestion > lastQuestion) {
-      quizElement.style.display = "none";
-      resultsElement.style.display = "block";
-      finalScoreElement.textContent = score;
+      quiz.style.display = "none";
+      results.style.display = "block";
+      finalScore.textContent = score;
     } else {
       showQuestions();
     }
