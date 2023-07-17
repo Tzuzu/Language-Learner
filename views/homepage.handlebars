@@ -20,33 +20,6 @@
         <title>Language Learning</title>
     </head>
     <body>
-            <nav 
-            class='navbar bg-body-tertiary'>
-                <div class='container-fluid'>
-                    <a class='navbar-brand' href='#'>
-                        <img
-                            src='../../public/assets/images/logo.jpeg'
-                            alt='Logo'
-                            width='30'
-                            height='24'
-                        />
-                        Linguify
-                    </a>
-                
-                {{#if logged_in}}
-                    
-                    <button type="button" class="btn btn-danger" class="log-button">
-                        Logout
-                    </button>
-                
-                {{else}}
-                
-                    <button type="button" class="btn btn-danger" class="log-button">
-                        Signup or Login
-                    </button>
-                </div>
-                {{/if}}
-            </nav>
 {{{body}}} {{#if logged_in}}
         <main>
             <section class="py-5 text-center container">
@@ -64,7 +37,7 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <div class="col">
                             <div class="card shadow-sm">
-                                <a href="french">
+                                <a href="/french">
             
                                     <img
                                         src="../../public/assets/images/france-flag.jpg"    
@@ -83,7 +56,7 @@
                         </div>
                         <div class="col">
                             <div class="card shadow-sm">
-                                <a href="japanese">
+                                <a href="/japanese">
                                     <img
                                     src="../../public/assets/images/japan-flag.jpg"
                                     class="bd-placeholder-img card-img-top"
@@ -111,7 +84,7 @@
                                 </img>
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="spanish">SPANISH</a>
+                                        <a href="/spanish">SPANISH</a>
                                     </p>
                                 </div>
                             </div>

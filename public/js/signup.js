@@ -2,18 +2,18 @@ const signupFormHandler = async (event) => {
   event.preventDefault();
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
-  const confirmPassword = document.querySelector('#confirmPassword').value.trim();
-  if (email && password && confirmPassword) {
+  const username = document.querySelector('#username').value.trim();
+  console.log(username, email, password);
+  if (username && email && password) {
     try {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/user', {
         method: 'POST',
-        body: JSON.stringify({ email, password, confirmPassword }),
+        body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
 
       if (response.ok) {
         alert('Sign Up Successful');
-        window.location.href = '/homepage';
         document.location.replace('/');
       } else {
         console.log(response);

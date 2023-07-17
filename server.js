@@ -17,7 +17,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: { maxAge: 300000, // 5 minutes = 300000,
+  httpOnly: true,
+  secure: false,
+  sameSite: 'strict',
+},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -33,18 +37,18 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 
-app.post('/api.users/login', (req, res) => {
-  const { email, password } = req.body;
-  const userData = { email, password };
-  fs.appendFile('userData.json', JSON.stringify(userData), (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Failed to store user data' });
-    } else {
-      res.status(200).json({ message: 'User data stored successfully' });
-    }
-  });
-});
+// app.post('/api/user/login', (req, res) => {
+//   const { email, password } = req.body;
+//   const userData = { email, password };
+//   fs.appendFile('userData.json', JSON.stringify(userData), (err) => {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).json({ error: 'Failed to store user data' });
+//     } else {
+//       res.status(200).json({ message: 'User data stored successfully' });
+//     }
+//   });
+// });
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
