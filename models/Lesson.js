@@ -1,6 +1,5 @@
-const { DataTypes, Model } = require('sequelize');
-const sequelize = require('../config/connection');
-//const db = require(''); //will need to be sure to add config database here or utils
+const { DataTypes } = require('sequelize');
+const db = require(''); //will need to be sure to add config database here or utils
 
 class Lesson extends Model {}
 Lesson.init(

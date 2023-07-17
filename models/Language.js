@@ -1,7 +1,5 @@
-const { DataTypes, Model } = require('sequelize');
-const sequelize = require('../config/connection'); // will need to import the config database here
-
-class Language extends Model {}
+const { DataTypes } = require('sequelize');
+const sequelize = require('..'); // will need to import the config database here
 
 Language.init(
     {

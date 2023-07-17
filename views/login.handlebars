@@ -2,128 +2,52 @@
     <head>
         <meta charset='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <!-- Include Bootstrap CSS -->
         <link
+            rel='stylesheet'
             href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'
-            rel='stylesheet'
-            integrity='sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM'
-            crossorigin='anonymous'
         />
-        <link
-            rel='stylesheet'
-            type='text/css'
-            href='../../public/css/main.css'
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:ital@1&family=Raleway:wght@300&display=swap" rel="stylesheet">
-        <title>Language Learning</title>
+        <title>Login and Sign Up</title>
     </head>
     <body>
-            <nav 
-            class='navbar bg-body-tertiary'>
-                <div class='container-fluid'>
-                    <a class='navbar-brand' href='#'>
-                        <img
-                            src='../../public/assets/images/logo.jpeg'
-                            alt='Logo'
-                            width='30'
-                            height='24'
-                        />
-                        Linguify
-                    </a>
-                
-                {{#if logged_in}}
-                    
-                    <button type="button" class="btn btn-danger" class="log-button">
-                        Logout
-                    </button>
-                
-                {{else}}
-                
-                    <button type="button" class="btn btn-danger" class="log-button">
-                        Signup or Login
-                    </button>
-                </div>
-                {{/if}}
-            </nav>
-        <!--Sign in form -->
-        {{#if logged_in}}
-        <main class='form-signin w-100 m-auto'>
-                <img src='../assets/images/logo.jpeg' alt='logo' width='72' height='57' />
-                <h1 class='h3 mb-3 fw-normal'>Please sign in</h1>
-
-                <div class='form-floating'>
-                    <input
-                        type='email'
-                        class='form-control'
-                        id='floatingInput'
-                        placeholder='name@example.com'
-                    />
-                    <label for='floatingInput'>Email address</label>
-                </div>
-                <div class='form-floating'>
-                    <input
-                        type='password'
-                        class='form-control'
-                        id='floatingPassword'
-                        placeholder='Password'
-                    />
-                    <label for='floatingPassword'>Password</label>
-                </div>
-
-                <button class='btn btn-danger w-100 py-2' type='submit'>Sign in</button>
-                <p class='mt-5 mb-3 text-body-secondary'>© 2017–2023</p>
-            </form>
-        </main>
-
-        <!-- Sign Up Form -->
-        {{else}}
-        <main class='form-signin w-100 m-auto'>
-            <form id="sign-up">
+        <!-- Sign in form -->
+        <div id='sign-in-form' class='form-signin w-100 m-auto'>
+            <form id='login-form'>
                 <img
                     src='../assets/images/logo.jpeg'
                     alt='logo'
                     width='72'
                     height='57'
                 />
-                <h1 class='h3 mb-3 fw-normal'>Please sign up</h1>
+                <h1 class='h3 mb-3 fw-normal'>Sign-In</h1>
 
                 <div class='form-floating'>
                     <input
                         type='email'
                         class='form-control'
-                        id='floatingInput'
+                        id='email-login'
                         placeholder='name@example.com'
                     />
-                    <label for='floatingInput'>Email address</label>
+                    <label for='email-login'>Email address</label>
                 </div>
                 <div class='form-floating'>
                     <input
                         type='password'
                         class='form-control'
-                        id='floatingPassword'
+                        id='password-login'
                         placeholder='Password'
                     />
-                    <label for='floatingPassword'>Password</label>
-                </div>
-                <div class='form-floating'>
-                    <input
-                        type='password'
-                        class='form-control'
-                        id='floatingPassword'
-                        placeholder='Password'
-                    />
-                    <label for='floatingPassword'>Confirm Password</label>
+                    <label for='password-login'>Password</label>
                 </div>
 
-                <button class='btn btn-danger w-100 py-2' type='submit'>Sign Up</button>
-                <p class='mt-5 mb-3 text-body-secondary'>© 2017–2023</p>
+                <button class='btn btn-danger w-100 py-2' type='submit'>Sign in</button>
             </form>
-        </main>
-        {{/if}}
+        </div>
+
         <!-- Include Bootstrap JavaScript -->
-        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
-        <script src="./js/signup.js"></script>
-        <script src="./js/login.js"></script>
+        <script
+            src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'
+        ></script>
+        <script src='./js/login.js'></script>
     </body>
 </html>

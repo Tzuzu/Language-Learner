@@ -12,6 +12,11 @@ Language.hasMany(Lesson, { foreignKey: 'languageId' });
 Lesson.belongsTo(Language, { foreignKey: 'languageId', onDelete: 'CASCADE' });
 Lesson.hasMany(Question, { foreignKey: 'lessonId' });
 Question.belongsTo(Lesson, { foreignKey: 'lessonId' });
+User.belongsTo(Language, { foreignKey: 'languageId', onDelete: 'CASCADE' });
+Language.hasMany(Lesson, { foreignKey: 'languageId' });
+Lesson.belongsTo(Language, { foreignKey: 'languageId', onDelete: 'CASCADE' });
+Lesson.hasMany(Question, { foreignKey: 'lessonId' });
+Question.belongsTo(Lesson, { foreignKey: 'lessonId' });
 
 // Export models
 module.exports = { Language, User, Lesson, Question };

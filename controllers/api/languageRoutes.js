@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { User, Lesson, Language } = require('../../models');
+const { Language } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const language = await Language.findAll(req.body.languageId, {});
+        const languages = await Language.findAll();
+        res.json(languages);
     } catch (error) {
         console.log(error);
-        res.status(500).json(error);
+        res.status(500).json({ error: 'Internal server error' });
     }
 });
 

@@ -1,5 +1,4 @@
 var homeBtn = document.getElementById('home');
-var reviewBtn = document.getElementById('review');
 var retryBtn = document.getElementById('retry');
 var startBtn = document.getElementById('start');
 var question = document.getElementById('question');
@@ -75,11 +74,12 @@ function startQuiz() {
 }
 
 function showQuestions() {
-    question.innerHTML = questions[currentQuestion].question;
-    choiceA.innerHTML = questions[currentQuestion].choiceA;
-    choiceB.innerHTML = questions[currentQuestion].choiceB;
-    choiceC.innerHTML = questions[currentQuestion].choiceC;
-    choiceD.innerHTML = questions[currentQuestion].choiceD;
+    question.textContent = questions[currentQuestion].question;
+    choiceA.textContent = questions[currentQuestion].choiceA;
+    choiceB.textContent = questions[currentQuestion].choiceB;
+    choiceC.textContent = questions[currentQuestion].choiceC;
+    choiceD.textContent = questions[currentQuestion].choiceD;
+    currentQuestion.textContent = `Question ${currentQuestion + 1}`;
 }
 
 function checkAnswer(answer) {
@@ -90,19 +90,17 @@ function checkAnswer(answer) {
     if (currentQuestion > lastQuestion) {
         quiz.style.display = 'none';
         results.style.display = 'block';
-        quizCompleted = true;
-        finalScore.innerHTML = score;
+        finalScore.textContent = score;
     } else {
         showQuestions();
     }
 }
 
+homeBtn.addEventListener('click', redirectToHome);
+retryBtn.addEventListener('click', retryLesson);
+
 function redirectToHome() {
     window.location.href = '/';
-}
-
-function redirectToReview() {
-    window.location.href = '/reviews';
 }
 
 function retryLesson() {
