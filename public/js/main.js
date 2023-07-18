@@ -1,4 +1,4 @@
-var signupBtn = getElementById("signup-button")
+var signupBtn = document.getElementById("signup-button")
 
 signupBtn.addEventListener("click", signupRedirect);
 
