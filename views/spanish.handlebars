@@ -43,18 +43,16 @@
         <img src="https://flagsapi.com/MX/shiny/64.png">
       </div>
 
-<div id="quiz" style="display: none">
-    <div id="question"></div>
-    <br>
-    <div id="choices">
-         <button type="button" class="btn btn-danger"><div class="choice" id="A" onclick="checkAnswer('A')"></div></button>
-            <br>
-        <button type="button" class="btn btn-danger"><div class="choice" id="B" onclick="checkAnswer('B')"></div></button>
-            <br>
-        <button type="button" class="btn btn-danger"><div class="choice" id="C" onclick="checkAnswer('C')"></div></button>
-            <br>
-        <button type="button" class="btn btn-danger"><div class="choice" id="D" onclick="checkAnswer('D')"></div></button>
-    </div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><div id="question"></div></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><div class="choice" id="B" onclick="checkAnswer('B')"></div></li>
+    <li class="list-group-item"><div class="choice" id="B" onclick="checkAnswer('B')"></div></li>
+    <li class="list-group-item"><div class="choice" id="C" onclick="checkAnswer('C')"></div></li>
+    <li class="list-group-item"><div class="choice" id="D" onclick="checkAnswer('D')"></div></li>
+  </ul>
 </div>
 
 <!--This section gives the results with buttons to go back to the home page, review page, or retry the lesson.-->
