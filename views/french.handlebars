@@ -56,19 +56,30 @@
         <img src="https://flagsapi.com/FR/shiny/64.png">
       </div>
 
-<div id="quiz" style="display: none">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><div id="question"></div></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><div class="choice" id="B" onclick="checkAnswer('B')"></div></li>
+    <li class="list-group-item"><div class="choice" id="B" onclick="checkAnswer('B')"></div></li>
+    <li class="list-group-item"><div class="choice" id="C" onclick="checkAnswer('C')"></div></li>
+    <li class="list-group-item"><div class="choice" id="D" onclick="checkAnswer('D')"></div></li>
+  </ul>
+</div>
+{{!-- <div id="quiz" style="display: none">
     <div id="question"></div>
     <br>
     <div id="choices">
-         <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+         <button type="button" class="btn btn-danger" id="a-but"><div class="choice" id="A" onclick="checkAnswer('A')"></div></button>
             <br>
-        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+        <button type="button" class="btn btn-danger" id="b-but"><div class="choice" id="B" onclick="checkAnswer('B')"></div></button>
             <br>
-        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+        <button type="button" class="btn btn-danger" id="c-but"><div class="choice" id="C" onclick="checkAnswer('C')"></div></button>
             <br>
-        <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+        <button type="button" class="btn btn-danger" id="d-but"><div class="choice" id="D" onclick="checkAnswer('D')"></div></button>
     </div>
-</div>
+</div> --}}
 
 <!--This section gives the results with buttons to go back to the home page, review page, or retry the lesson.-->
     <div id='results' style="display: none">
