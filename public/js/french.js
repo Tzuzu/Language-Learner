@@ -1,17 +1,16 @@
-var homeBtn = document.getElementById('home');
-var reviewBtn = document.getElementById('review');
-var retryBtn = document.getElementById('retry');
-var startBtn = document.getElementById('start');
-var question = document.getElementById('question');
-var results = document.getElementById('results');
-var finalScore = document.getElementById('finalScore');
+var homeBtn = document.getElementById("home");
+var retryBtn = document.getElementById("retry");
+var startBtn = document.getElementById("start");
+var question = document.getElementById("question");
+var results = document.getElementById("results");
+var finalScore = document.getElementById("finalScore");
 var score = 0;
-var quiz = document.getElementById('quiz');
-var question = document.getElementById('question');
-var choiceA = document.getElementById('A');
-var choiceB = document.getElementById('B');
-var choiceC = document.getElementById('C');
-var choiceD = document.getElementById('D');
+var quiz = document.getElementById("quiz");
+var question = document.getElementById("question");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
+var choiceD = document.getElementById("D");
 var currentQuestion = 0;
 var quizCompleted = false;
 var lastQuestion = 4;
@@ -100,13 +99,10 @@ function checkAnswer(answer) {
 homeBtn.addEventListener("click", redirectToHome);
 retryBtn.addEventListener("click", retryLesson);
 
-function displayButton() {
-    submitBtn.style.display = 'block';
+function redirectToHome() {
+  window.location.href = "/";
 }
 
-function redirectToHome() {
-    window.location.href = '/';
-}
 function retryLesson() {
-    window.location.reload();
+  window.location.reload();
 }
