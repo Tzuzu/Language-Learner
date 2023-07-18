@@ -2,7 +2,7 @@ var signupBtn = document.getElementById("signup-button")
 var loginBtn = document.getElementById("login-button")
 
 signupBtn.addEventListener("click", signupRedirect);
-loginBtn = document.getElementById("click", loginRedirect);
+loginBtn.addEventListener("click", loginRedirect);
 
 function signupRedirect() {
     window.location.href = "/signup"
